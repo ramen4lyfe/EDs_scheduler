@@ -140,10 +140,13 @@ const UpdateModal = (props) => {
           </Form.Select>
           {errors.gmEmployee ? <p className="text-danger">{errors.gmEmployee.message}</p> : null}
         </Form.Group>
-          <Button variant="primary" type="submit" onClick={handleSubmit}>
-            Submit
-          </Button>
+          
         </Modal.Body>
+        <Modal.Footer>
+        <Button variant="primary" type="submit" onClick={handleSubmit}>
+            Update
+          </Button>
+        </Modal.Footer>
       </Modal>
     </>
   )

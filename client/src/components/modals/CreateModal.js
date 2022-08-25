@@ -128,12 +128,11 @@ const CreateModal = () => {
           </Form.Select>
           {errors.gmEmployee ? <p className="text-danger">{errors.gmEmployee.message}</p> : null}
         </Form.Group>
-          <Button variant="primary" type="submit" onClick={handleSubmit} id="createForm">
-            Create
-          </Button>
         </Modal.Body>
         <Modal.Footer>
-            <Link to="/schedule/view" onClick={handleSubmit}>Test Submit</Link>
+        <Button variant="primary" type="submit" onClick={handleSubmit} id="createForm">
+            Create
+          </Button>
         </Modal.Footer>
       </Modal>
     </>
