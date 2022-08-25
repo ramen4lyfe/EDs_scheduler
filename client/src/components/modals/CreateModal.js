@@ -48,6 +48,8 @@ const CreateModal = () => {
       navigate("/schedule/view");
 
       setShow(false);
+
+      
   })
   .catch((err) => {
       console.log(err)
@@ -131,7 +133,7 @@ const CreateModal = () => {
           </Form.Select>
           {errors.gmEmployee ? <p className="text-danger">{errors.gmEmployee.message}</p> : null}
         </Form.Group>
-          <Button variant="primary" type="submit" onClick={handleSubmit}>
+          <Button variant="primary" type="submit" onClick={handleSubmit} id="createForm">
             Submit
           </Button>
         </Modal.Body>
