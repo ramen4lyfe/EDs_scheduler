@@ -23,15 +23,15 @@ const CreateModal = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  useEffect(() =>{
-    axios.get("http://localhost:8000/api/user/")
-    .then((res=>{
-        console.log(res);
-        console.log(res.data);
-        setUserList(res.data);
-    }))
-    .catch((err)=>console.log(err))
-}, [])
+//   useEffect(() =>{
+//     axios.get("http://localhost:8000/api/user/")
+//     .then((res=>{
+//         console.log(res);
+//         console.log(res.data);
+//         setUserList(res.data);
+//     }))
+//     .catch((err)=>console.log(err))
+// }, [])
 
   const handleSubmit = (e) => {
     e.preventDefault()
