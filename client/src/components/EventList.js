@@ -4,6 +4,7 @@ import {Link, useNavigate} from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
+import CreateModal from './modals/CreateModal';
 import UpdateModal from './modals/UpdateModal';
 import moment from 'moment';
 
@@ -48,6 +49,7 @@ const EventList = () => {
             <Card className="text-center shadow-sm m-5" >
                 <Card.Body>
                     <Card.Title>Daily Work Schedule</Card.Title>
+                    <CreateModal />
                     <Table striped hover>
                         <thead>
                             <tr>
@@ -62,15 +64,15 @@ const EventList = () => {
                         <tbody>
                             {eventList.map((event, index) => (
                                 <tr>
-                                    <th>{moment(event.date).format('dddd, MMM Do')}</th>
-                                    <th>{moment(event.startTime).format('h:mm A zz')} - {moment(event.endTime).format('h:mmAZ')}</th>
-                                    <th>{event.gameName}</th>
-                                    <th>{event.hostEmployee}</th>
-                                    <th>{event.gmEmployee}</th>
-                                    <th className="btn-group" role="group" aria-label="Action Buttons">
+                                    <td>{moment(event.date).format('dddd, MMM Do')}</td>
+                                    <td>{moment(event.startTime).format('h:mm A zz')} - {moment(event.endTime).format('h:mmAZ')}</td>
+                                    <td>{event.gameName}</td>
+                                    <td>{event.hostEmployee}</td>
+                                    <td>{event.gmEmployee}</td>
+                                    <td className="btn-group" role="group" aria-label="Action Buttons">
                                         <UpdateModal id={event._id}/>
                                         <Button variant="primary" type="submit" onClick={() => handleDelete(event._id)}>Delete</Button>
-                                    </th>
+                                    </td>
                                 </tr>
                             ))}
                         </tbody>

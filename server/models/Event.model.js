@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-// var ObjectId = require('mongodb').ObjectId;
+var ObjectId = require('mongodb').ObjectId;
 
 const EventSchema = new mongoose.Schema({
     gameName: {
@@ -13,26 +13,31 @@ const EventSchema = new mongoose.Schema({
         //minlength: [5, 'date length should be more than 4 characters']
     },
     startTime: {
-        type: Date, // Date schema type of Mongoose represents not just a date, but a full date and time timestamp,
+        type: String, // Date schema type of Mongoose represents not just a date, but a full date and time timestamp,
         required: [true, 'start time is required'],
         // min: [0, 'invalid start time'],
         // max: [23, 'invalid start time']
     },
     endTime: {
-        type: Date,// 
+        type: String,// 
         required: [true, 'end time is required'],
         // min: [1, 'invalid end time'],
         // max: [24, 'invalid end time']
     },
     hostEmployee: { 
-        type : String, 
+        // type : String, 
+        type : ObjectId, 
         required: [true, 'Select a Host'],
-        // ref: "User",
+        // enum:['Quang', 'Peter', 'HHH'],
+        ref: "User",
     },
     gmEmployee: { 
-        type : String,
+        // type : String,
+        type : ObjectId, 
         required: [true, 'Select a GM'], 
-        // ref: "User",
+        // enum:['Quang', 'Peter', 'HHH'],
+
+        ref: "User",
     }
     }, 
     {timestamps: true}
