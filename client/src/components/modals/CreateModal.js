@@ -34,7 +34,7 @@ const CreateModal = () => {
 // }, [])
 
   const handleSubmit = (e) => {
-    e.preventDefault()
+    // e.preventDefault()
     axios.post("http://localhost:8000/schedule", {gameName, date, startTime, endTime, hostEmployee, gmEmployee})
     .then(response => {
       console.log('Event Created Succesfully', response);
@@ -44,12 +44,9 @@ const CreateModal = () => {
       setEndTime("");
       setHostEmployee("");
       setGmEmployee("");
-
       navigate("/schedule/view");
-
       setShow(false);
-
-      
+      window.location.reload(false)
   })
   .catch((err) => {
       console.log(err)
@@ -134,9 +131,12 @@ const CreateModal = () => {
           {errors.gmEmployee ? <p className="text-danger">{errors.gmEmployee.message}</p> : null}
         </Form.Group>
           <Button variant="primary" type="submit" onClick={handleSubmit} id="createForm">
-            Submit
+            Create
           </Button>
         </Modal.Body>
+        <Modal.Footer>
+            <Link to="/schedule/view" onClick={handleSubmit}>Test Submit</Link>
+        </Modal.Footer>
       </Modal>
     </>
   )

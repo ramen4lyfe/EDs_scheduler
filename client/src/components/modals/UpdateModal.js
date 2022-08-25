@@ -30,12 +30,15 @@ const UpdateModal = (props) => {
     .then((response => {
         console.log(response)
         setGameName(response.data.gameName)
-        let d = new Date(response.data.date);
-        setDate(d.getFullYear() + "-" + ("0" + (d.getMonth() + 1)).slice(-2) + "-" + d.getDate() )
+        // let d = new Date(response.data.date);
+        // setDate(d.getFullYear() + "-" + ("0" + (d.getMonth() + 1)).slice(-2) + "-" + d.getDate() )
+        setDate(response.data.date)
         setStartTime(response.data.startTime)
         setEndTime(response.data.endTime)
-        setHostEmployee(response.data.hostEmployee._id)
-        setGmEmployee(response.data.gmEmployee._id)
+        // setHostEmployee(response.data.hostEmployee._id)
+        // setGmEmployee(response.data.gmEmployee._id)
+        setHostEmployee(response.data.hostEmployee)
+        setGmEmployee(response.data.gmEmployee)
     }))
     .catch((err)=>console.log(err))
 
@@ -49,12 +52,12 @@ const UpdateModal = (props) => {
 }, [id])
 
   const handleSubmit = (e) => {
-    e.preventDefault()
+    // e.preventDefault()
     axios.put(`http://localhost:8000/schedule/${id}`, {gameName, date, startTime, endTime, hostEmployee, gmEmployee})
     .then(response => {
       console.log('Event Updated Succesfully', response);
       navigate("/schedule/view");
-
+      window.location.reload(false)
       setShow(false);
   })
   .catch((err) => {
@@ -116,9 +119,12 @@ const UpdateModal = (props) => {
           <Form.Label>Host: </Form.Label>
           <Form.Select value={hostEmployee} onChange={(e) => setHostEmployee(e.target.value)} aria-label="Select a Host">
             <option defaultValue>Select a Host</option>
-            {userList.map((user, index) => (
+            <option value="Quang">Quang</option>
+            <option value="Peter">Peter</option>
+            <option value="HHH">HHH</option>
+            {/* {userList.map((user, index) => (
               <option value={`${user._id}`}>{user.name}</option>
-            ))}
+            ))} */}
           </Form.Select>
           {errors.hostEmployee ? <p className="text-danger">{errors.hostEmployee.message}</p> : null}
         </Form.Group>
@@ -127,9 +133,12 @@ const UpdateModal = (props) => {
           <Form.Label>Game master: </Form.Label>
           <Form.Select value={gmEmployee} onChange={(e) => setGmEmployee(e.target.value)} aria-label="Select a Game Master">
             <option defaultValue>Select a Game Master</option>
-            {userList.map((user, index) => (
+            <option value="Quang">Quang</option>
+            <option value="Peter">Peter</option>
+            <option value="HHH">HHH</option>
+            {/* {userList.map((user, index) => (
               <option value={`${user._id}`}>{user.name}</option>
-            ))}
+            ))} */}
           </Form.Select>
           {errors.gmEmployee ? <p className="text-danger">{errors.gmEmployee.message}</p> : null}
         </Form.Group>
