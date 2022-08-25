@@ -108,9 +108,12 @@ const CreateModal = () => {
           <Form.Label>Host: </Form.Label>
           <Form.Select value={hostEmployee} onChange={(e) => setHostEmployee(e.target.value)} aria-label="Select a Host">
             <option defaultValue>Select a Host</option>
-            {userList.map((user, index) => (
+            <option value="Quang">Quang</option>
+            <option value="Peter">Peter</option>
+            <option value="HHH">HHH</option>
+            {/* {userList.map((user, index) => (
               <option value={`${user._id}`}>{user.name}</option>
-            ))}
+            ))} */}
           </Form.Select>
           {errors.hostEmployee ? <p className="text-danger">{errors.hostEmployee.message}</p> : null}
         </Form.Group>
@@ -119,9 +122,12 @@ const CreateModal = () => {
           <Form.Label>Game master: </Form.Label>
           <Form.Select value={gmEmployee} onChange={(e) => setGmEmployee(e.target.value)} aria-label="Select a Game Master">
             <option defaultValue>Select a Game Master</option>
-            {userList.map((user, index) => (
+            <option value="Quang">Quang</option>
+            <option value="Peter">Peter</option>
+            <option value="HHH">HHH</option>
+            {/* {userList.map((user, index) => (
               <option value={`${user._id}`}>{user.name}</option>
-            ))}
+            ))} */}
           </Form.Select>
           {errors.gmEmployee ? <p className="text-danger">{errors.gmEmployee.message}</p> : null}
         </Form.Group>
