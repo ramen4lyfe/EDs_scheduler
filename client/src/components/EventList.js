@@ -9,6 +9,7 @@ import UpdateModal from './modals/UpdateModal';
 import moment from 'moment';
 import IconButton from '@mui/material/IconButton';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import ButtonGroup from '@mui/material/ButtonGroup'
 
 const EventList = () => {
 
@@ -73,10 +74,10 @@ const EventList = () => {
                                     <td>{event.gameName}</td>
                                     <td>{event.hostEmployee}</td>
                                     <td>{event.gmEmployee}</td>
-                                    <td className="btn-group" role="group" aria-label="Action Buttons">
+                                    <td>
                                         <UpdateModal id={event._id}/>
                                         <IconButton type="submit" onClick={() => handleDelete(event._id)}>
-                                        <DeleteForeverIcon />
+                                        <DeleteForeverIcon color='error' />
                                         </IconButton>
                                     </td>
                                 </tr>

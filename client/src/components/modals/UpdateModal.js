@@ -72,7 +72,7 @@ const UpdateModal = (props) => {
   return (
     <>
         <IconButton aria-label="Edit event" onClick={handleShow}>
-            <EditIcon />
+            <EditIcon color='primary'/>
         </IconButton>
 
       <Modal
