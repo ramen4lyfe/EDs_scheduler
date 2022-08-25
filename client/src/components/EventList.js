@@ -49,13 +49,13 @@ const EventList = () => {
 
     return (
         <div className="App">
-            <Card className="text-center shadow-sm m-5" >
+            <Card className="text-center shadow-sm m-2 p-2" >
                 <Card.Body>
                     <div className="d-flex justify-content-between m-2 align-items-center">
                     <Card.Title>Daily Work Schedule</Card.Title>
                     <CreateModal />
                     </div>
-                    <Table striped hover>
+                    <Table hover>
                         <thead>
                             <tr>
                                 <th>Date</th>
