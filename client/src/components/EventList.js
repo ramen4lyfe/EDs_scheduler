@@ -30,11 +30,15 @@ const EventList = () => {
         .catch((err)=>console.log(err))
     }, [])
 
-    const handleDelete = (id) => {
-        axios.delete(`http://localhost:8000/schedule/${id}`)
+    const handleDelete = (idFromBelow) => {
+        axios
+        .delete(`http://localhost:8000/schedule/${idFromBelow}`)
         .then((res)=>{
             console.log(res.data);
-            navigate("/schedule/view");
+            const deletedEvent = eventList.filter((event) => {
+                return event._id !== idFromBelow
+            })
+            setEventList(deletedEvent)
         })
         .catch((err)=>console.log(err))
     }
@@ -59,7 +63,7 @@ const EventList = () => {
                             {eventList.map((event, index) => (
                                 <tr>
                                     <th>{moment(event.date).format('dddd, MMM Do')}</th>
-                                    <th>{moment(event.startTime).format('h:mm A')} - {event.endTime}</th>
+                                    <th>{moment(event.startTime).format('h:mm A zz')} - {moment(event.endTime).format('h:mmAZ')}</th>
                                     <th>{event.gameName}</th>
                                     <th>{event.hostEmployee}</th>
                                     <th>{event.gmEmployee}</th>
