@@ -75,11 +75,9 @@ const CreateModal = () => {
           <Form.Label>Game Name: </Form.Label>
           <Form.Select value={gameName} onChange={(e) => setGameName(e.target.value)} aria-label="Select a game">
             <option defaultValue>Select a game</option>
-            <option value="Game 1">Game 1</option>
-            <option value="Game 2">Game 2</option>
-            <option value="Game 3">Game 3</option>
-            <option value="Game 4">Game 4</option>
-            <option value="Game 5">Game 5</option>
+            <option value="Hostage">Hostage</option>
+            <option value="B.O.X">B.O.X</option>
+            <option value="Nursery">Nursery</option>
           </Form.Select>
           {errors.gameName ? <p className="text-danger">{errors.gameName.message}</p> : null}
 
