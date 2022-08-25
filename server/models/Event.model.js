@@ -25,17 +25,17 @@ const EventSchema = new mongoose.Schema({
         // max: [24, 'invalid end time']
     },
     hostEmployee: { 
-        // type : String, 
-        type : ObjectId, 
+        type : String, 
+        // type : ObjectId, 
         required: [true, 'Select a Host'],
-        // enum:['Quang', 'Peter', 'HHH'],
+        enum:['Quang', 'Peter', 'HHH'],
         ref: "User",
     },
     gmEmployee: { 
-        // type : String,
-        type : ObjectId, 
+        type : String,
+        // type : ObjectId, 
         required: [true, 'Select a GM'], 
-        // enum:['Quang', 'Peter', 'HHH'],
+        enum:['Quang', 'Peter', 'HHH'],
 
         ref: "User",
     }
