@@ -12,11 +12,7 @@ function App() {
             <Routes>
               {/* <Route path="/register" element={<Register/>} />
               <Route path="/login" element={<Login/>} /> */}
-              <Route path="/schedule/create" element={<CreateModal />} /> 
-              <Route path="/schedule/update/:id" element={<UpdateModal/>} />
               <Route path="/schedule/view" element={<EventList />} />
-              {/* <Route path="/" element={<WeekView />} />
-              <Route path="/" element={<DayView />} /> */}
             </Routes>
           </BrowserRouter>
         </div>
