@@ -7,7 +7,8 @@ import Button from 'react-bootstrap/Button';
 import CreateModal from './modals/CreateModal';
 import UpdateModal from './modals/UpdateModal';
 import moment from 'moment';
-
+import IconButton from '@mui/material/IconButton';
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 
 const EventList = () => {
 
@@ -74,7 +75,9 @@ const EventList = () => {
                                     <td>{event.gmEmployee}</td>
                                     <td className="btn-group" role="group" aria-label="Action Buttons">
                                         <UpdateModal id={event._id}/>
-                                        <Button variant="primary" type="submit" onClick={() => handleDelete(event._id)}>Delete</Button>
+                                        <IconButton type="submit" onClick={() => handleDelete(event._id)}>
+                                        <DeleteForeverIcon />
+                                        </IconButton>
                                     </td>
                                 </tr>
                             ))}

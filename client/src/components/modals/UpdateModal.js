@@ -4,6 +4,9 @@ import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import axios from 'axios';
 import { useNavigate, Link, useParams } from 'react-router-dom';
+import IconButton from '@mui/material/IconButton';
+import EditIcon from '@mui/icons-material/Edit';
+
 
 const UpdateModal = (props) => {
     const {id} = props;
@@ -68,10 +71,9 @@ const UpdateModal = (props) => {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
-      
-        Update
-      </Button>
+        <IconButton aria-label="Edit event" onClick={handleShow}>
+            <EditIcon />
+        </IconButton>
 
       <Modal
         show={show}

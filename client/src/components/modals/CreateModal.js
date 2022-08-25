@@ -58,7 +58,6 @@ const CreateModal = () => {
 
   return (
     <>
-     
         <IconButton aria-label="create event" onClick={handleShow}>
             <AddBoxIcon />
         </IconButton>
