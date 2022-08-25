@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const dbName= "eds_schedule";
+const dbName= "edsScheduleDB";
  
 mongoose
 .connect(`mongodb://localhost/${dbName}`,{
