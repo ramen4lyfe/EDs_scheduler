@@ -1,0 +1,1 @@
+const Event = require('../controllers/Event.controller')
