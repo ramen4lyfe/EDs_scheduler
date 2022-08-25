@@ -70,7 +70,7 @@ const EventList = () => {
                             {eventList.map((event, index) => (
                                 <tr key={event._id}>
                                     <td>{moment(event.date).format('dddd, MMM Do')}</td>
-                                    <td>{event.startTime} - {event.endTime}</td>
+                                    <td>{event.startTime}</td>
                                     <td>{event.gameName}</td>
                                     <td>{event.hostEmployee}</td>
                                     <td>{event.gmEmployee}</td>

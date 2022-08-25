@@ -11,7 +11,7 @@ const CreateModal = () => {
   const [gameName, setGameName] = useState("")
   const [date, setDate] = useState("")
   const [startTime, setStartTime] = useState("")
-  const [endTime, setEndTime] = useState("")
+  // const [endTime, setEndTime] = useState("")
   const [hostEmployee, setHostEmployee] = useState("")
   const [gmEmployee, setGmEmployee] = useState("")
 
@@ -37,13 +37,19 @@ const CreateModal = () => {
 
   const handleSubmit = (e) => {
     // e.preventDefault()
-    axios.post("http://localhost:8000/schedule", {gameName, date, startTime, endTime, hostEmployee, gmEmployee})
+    axios.post("http://localhost:8000/schedule", {
+      gameName, 
+      date, 
+      startTime, 
+      // endTime, 
+      hostEmployee, 
+      gmEmployee})
     .then(response => {
       console.log('Event Created Succesfully', response);
       setGameName("");
       setDate("");
       setStartTime("");
-      setEndTime("");
+      // setEndTime("");
       setHostEmployee("");
       setGmEmployee("");
       navigate("/schedule/view");
@@ -96,11 +102,11 @@ const CreateModal = () => {
           {errors.startTime ? <p className="text-danger">{errors.startTime.message}</p> : null}
         </Form.Group>
         
-        <Form.Group className="mb-3" controlId="endTime">
+        {/* <Form.Group className="mb-3" controlId="endTime">
           <Form.Label>End Time: </Form.Label>
           <Form.Control value={endTime} onChange={(e) => setEndTime(e.target.value)} type="time" placeholder="Enter end time" />
           {errors.endTime ? <p className="text-danger">{errors.endTime.message}</p> : null}
-        </Form.Group>
+        </Form.Group> */}
         
         <Form.Group className="mb-3" controlId="host">
           <Form.Label>Host: </Form.Label>
