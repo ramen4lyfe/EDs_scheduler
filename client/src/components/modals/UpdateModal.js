@@ -39,13 +39,13 @@ const UpdateModal = (props) => {
     }))
     .catch((err)=>console.log(err))
 
-    axios.get("http://localhost:8000/api/user/")
-    .then((res=>{
-        console.log(res);
-        console.log(res.data);
-        setUserList(res.data);
-    }))
-    .catch((err)=>console.log(err))
+    // axios.get("http://localhost:8000/api/user/")
+    // .then((res=>{
+    //     console.log(res);
+    //     console.log(res.data);
+    //     setUserList(res.data);
+    // }))
+    // .catch((err)=>console.log(err))
 }, [id])
 
   const handleSubmit = (e) => {
