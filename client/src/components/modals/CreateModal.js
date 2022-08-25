@@ -4,6 +4,8 @@ import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
+import IconButton from '@mui/material/IconButton';
+import AddBoxIcon from '@mui/icons-material/AddBox';
 
 const CreateModal = () => {
   const [gameName, setGameName] = useState("")
@@ -56,10 +58,10 @@ const CreateModal = () => {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
-        Create Event
-      </Button>
-
+     
+        <IconButton aria-label="create event" onClick={handleShow}>
+            <AddBoxIcon />
+        </IconButton>
       <Modal
         show={show}
         onHide={handleClose}
