@@ -43,6 +43,7 @@ const EventList = () => {
         })
         .catch((err)=>console.log(err))
     }
+    
 
     return (
         <div className="App">
