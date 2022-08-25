@@ -63,9 +63,9 @@ const EventList = () => {
                         </thead>
                         <tbody>
                             {eventList.map((event, index) => (
-                                <tr>
+                                <tr key={event._id}>
                                     <td>{moment(event.date).format('dddd, MMM Do')}</td>
-                                    <td>{moment(event.startTime).format('h:mm A zz')} - {moment(event.endTime).format('h:mmAZ')}</td>
+                                    <td>{event.startTime} - {event.endTime}</td>
                                     <td>{event.gameName}</td>
                                     <td>{event.hostEmployee}</td>
                                     <td>{event.gmEmployee}</td>
