@@ -45,7 +45,7 @@ const CreateModal = () => {
       setHostEmployee("");
       setGmEmployee("");
 
-      navigate("/calendar/month");
+      navigate("/schedule/view");
 
       setShow(false);
   })
