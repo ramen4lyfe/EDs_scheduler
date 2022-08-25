@@ -29,7 +29,7 @@ const EventSchema = new mongoose.Schema({
         // type : ObjectId, 
         required: [true, 'Select a Host'],
         enum:['Quang', 'Peter', 'HHH'],
-        ref: "User",
+        // ref: "User",
     },
     gmEmployee: { 
         type : String,
@@ -37,7 +37,7 @@ const EventSchema = new mongoose.Schema({
         required: [true, 'Select a GM'], 
         enum:['Quang', 'Peter', 'HHH'],
 
-        ref: "User",
+        // ref: "User",
     }
     }, 
     {timestamps: true}
