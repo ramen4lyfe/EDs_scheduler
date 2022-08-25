@@ -4,7 +4,7 @@ var ObjectId = require('mongodb').ObjectId;
 const EventSchema = new mongoose.Schema({
     gameName: {
         type: String,
-        enum: ['Game 1','Game 2','Game 3', 'Game 4','Game 5'],
+        enum: ['Hostage','B.O.X', 'Nursery'],
         required: [true, 'game name is required'],
     },
     date: {
