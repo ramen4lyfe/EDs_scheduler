@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import axios from 'axios';
-
+import InputGroup from 'react-bootstrap/InputGroup';
 
 
 const CreateForm = () => {
@@ -37,7 +37,7 @@ const CreateForm = () => {
         setGmEmployee("");
         navigate("/schedule/view");
         // setShow(false);
-        // window.location.reload(false)
+        window.location.reload(false)
     })
     .catch((err) => {
         console.log(err)
@@ -47,29 +47,28 @@ const CreateForm = () => {
 
 return (
     <>
-    <Form.Group className="mb-3" controlId="gameName">
-        <Form.Label>Game Name: </Form.Label>
+    <InputGroup className="mb-3" controlId="gameName">
+        <InputGroup.Text id="basic-addon1">Game</InputGroup.Text>
         <Form.Select value={gameName} onChange={(e) => setGameName(e.target.value)} aria-label="Select a game">
         <option defaultValue>Select a game</option>
         <option value="Hostage">Hostage</option>
         <option value="B.O.X">B.O.X</option>
         <option value="Nursery">Nursery</option>
         </Form.Select>
-        
         {errors.gameName ? <p className="text-danger">{errors.gameName.message}</p> : null}
-    </Form.Group>
+    </InputGroup>
 
-    <Form.Group className="mb-3" controlId="date">
-        <Form.Label>Date: </Form.Label>
+    <InputGroup className="mb-3" controlId="date" >
+        <InputGroup.Text id="basic-addon1">Date</InputGroup.Text>
         <Form.Control value={date} onChange={(e) => setDate(e.target.value)} type="date" placeholder="Enter Date" />
         {errors.date ? <p className="text-danger">{errors.date.message}</p> : null}
-    </Form.Group>
+    </InputGroup>
     
-    <Form.Group className="mb-3" controlId="startTime">
-        <Form.Label>Start Time: </Form.Label>
+    <InputGroup className="mb-3" controlId="startTime" >
+        <InputGroup.Text id="basic-addon1">Time</InputGroup.Text>
         <Form.Control value={startTime} onChange={(e) => setStartTime(e.target.value)} type="time" placeholder="Enter start time" />
         {errors.startTime ? <p className="text-danger">{errors.startTime.message}</p> : null}
-    </Form.Group>
+    </InputGroup>
     
     {/* <Form.Group className="mb-3" controlId="endTime">
         <Form.Label>End Time: </Form.Label>
@@ -77,8 +76,8 @@ return (
         {errors.endTime ? <p className="text-danger">{errors.endTime.message}</p> : null}
     </Form.Group> */}
     
-    <Form.Group className="mb-3" controlId="host">
-        <Form.Label>Host: </Form.Label>
+    <InputGroup className="mb-3" controlId="host">
+        <InputGroup.Text id="basic-addon1">Host</InputGroup.Text>
         <Form.Select value={hostEmployee} onChange={(e) => setHostEmployee(e.target.value)} aria-label="Select a Host">
         <option defaultValue>Select a Host</option>
         <option value="Quang">Quang</option>
@@ -89,10 +88,10 @@ return (
         ))} */}
         </Form.Select>
         {errors.hostEmployee ? <p className="text-danger">{errors.hostEmployee.message}</p> : null}
-    </Form.Group>
+    </InputGroup>
     
-    <Form.Group className="mb-3" controlId="gm">
-        <Form.Label>Game master: </Form.Label>
+    <InputGroup className="mb-3" controlId="gm">
+        <InputGroup.Text id="basic-addon1">GM</InputGroup.Text>
         <Form.Select value={gmEmployee} onChange={(e) => setGmEmployee(e.target.value)} aria-label="Select a Game Master">
         <option defaultValue>Select a Game Master</option>
         <option value="Quang">Quang</option>
@@ -103,7 +102,7 @@ return (
         ))} */}
         </Form.Select>
         {errors.gmEmployee ? <p className="text-danger">{errors.gmEmployee.message}</p> : null}
-    </Form.Group>
+    </InputGroup>
     <Button variant="primary" type="submit" onClick={handleSubmit} id="createForm">
         Create
     </Button>
