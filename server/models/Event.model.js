@@ -18,12 +18,12 @@ const EventSchema = new mongoose.Schema({
         // min: [0, 'invalid start time'],
         // max: [23, 'invalid start time']
     },
-    endTime: {
-        type: String,// 
-        required: [true, 'end time is required'],
-        // min: [1, 'invalid end time'],
-        // max: [24, 'invalid end time']
-    },
+    // endTime: {
+    //     type: String,// 
+    //     required: [true, 'end time is required'],
+    //     // min: [1, 'invalid end time'],
+    //     // max: [24, 'invalid end time']
+    // },
     hostEmployee: { 
         type : String, 
         // type : ObjectId, 
