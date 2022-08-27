@@ -85,6 +85,7 @@ const CreateModal = () => {
         {/* <Button variant="primary" type="submit" onClick={handleSubmit} id="createForm">
             Create
           </Button> */}
+          <Button variant="outline-secondary" type="submit" onClick={handleClose}>Close</Button>
         </Modal.Footer>
       </Modal>
     </>
