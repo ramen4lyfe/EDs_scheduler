@@ -10,8 +10,15 @@ import moment from 'moment';
 import IconButton from '@mui/material/IconButton';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import ButtonGroup from '@mui/material/ButtonGroup'
+import TestModal from './modals/TestModal';
 
 const EventList = () => {
+
+
+    openModal = () => this.setState({ isOpen: true });
+    closeModal = () => this.setState({ isOpen: false });
+    handleSubmit(name) => //some code
+
 
     const [eventList, setEventList] = useState([]);
     let events = [];
@@ -53,6 +60,7 @@ const EventList = () => {
                 <Card.Body>
                     <div className="d-flex justify-content-between m-2 align-items-center">
                     <Card.Title>Daily Work Schedule</Card.Title>
+                    <TestModal />
                     <CreateModal handleSubmit/>
                     </div>
                     <Table hover>

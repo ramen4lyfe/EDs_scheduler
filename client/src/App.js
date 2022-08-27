@@ -3,6 +3,7 @@ import CreateModal from './components/modals/CreateModal';
 import EventList from './components/EventList';
 import UpdateModal from './components/modals/UpdateModal';
 
+
 function App() {
   return (
     <div className="container">
