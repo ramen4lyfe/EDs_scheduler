@@ -54,13 +54,17 @@ const CreateModal = () => {
       setGmEmployee("");
       navigate("/schedule/view");
       setShow(false);
-      window.location.reload(false)
+      // window.location.reload(false)
   })
   .catch((err) => {
       console.log(err)
       setErrors(err.response.data.error.errors);
   });
   }
+
+  const ModalComponent = (props) => {
+    const {handleSubmit} = props
+  } 
 
   return (
     <>

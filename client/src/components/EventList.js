@@ -53,7 +53,7 @@ const EventList = () => {
                 <Card.Body>
                     <div className="d-flex justify-content-between m-2 align-items-center">
                     <Card.Title>Daily Work Schedule</Card.Title>
-                    <CreateModal />
+                    <CreateModal handleSubmit/>
                     </div>
                     <Table hover>
                         <thead>
