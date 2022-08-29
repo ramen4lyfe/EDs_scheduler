@@ -93,9 +93,12 @@ return (
         </Form.Select>
         {errors.gmEmployee ? <p className="text-danger">{errors.gmEmployee.message}</p> : null}
     </InputGroup>
-    <Button variant="primary" type="submit" onClick={handleSubmit} id="createForm">
+    {/* this div is for block button */}
+    <div className="d-grid gap-2">
+    <Button variant="primary" type="submit" onClick={handleSubmit} id="createForm" >
         Create
     </Button>
+    </div>
     </>
 )
 }
