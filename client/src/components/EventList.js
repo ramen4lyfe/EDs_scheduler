@@ -1,4 +1,4 @@
-import {React, useState, useEffect} from 'react'
+import { React, useState, useEffect, useContext } from 'react'
 import axios from 'axios';
 import {Link, useNavigate} from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
@@ -9,23 +9,26 @@ import moment from 'moment';
 import IconButton from '@mui/material/IconButton';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import ButtonGroup from '@mui/material/ButtonGroup'
+import { EventContext } from './context/EventContext';
 
 const EventList = () => {
 
-    const [eventList, setEventList] = useState([]);
-    let events = [];
-    const navigate = useNavigate();
+    const {}
 
-    useEffect(() =>{
-        axios.get("http://localhost:8000/schedule")
-        .then((res=>{
-            console.log(res);
-            console.log(res.data);
+    // const [eventList, setEventList] = useState([]);
+    // let events = [];
+    // const navigate = useNavigate();
 
-            setEventList(res.data);            
-        }))
-        .catch((err)=>console.log(err))
-    }, [])
+    // useEffect(() =>{
+    //     axios.get("http://localhost:8000/schedule")
+    //     .then((res=>{
+    //         console.log(res);
+    //         console.log(res.data);
+
+    //         setEventList(res.data);            
+    //     }))
+    //     .catch((err)=>console.log(err))
+    // }, [])
 
     const handleDelete = (idFromBelow) => {
         axios

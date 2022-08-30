@@ -14,7 +14,7 @@ function App() {
               {/* <Route path="/register" element={<Register/>} />
               <Route path="/login" element={<Login/>} /> */}
               <EventContextProvider>
-              <Route path="/schedule/view" element={<EventList />} />
+                <Route path="/schedule/view" element={<EventList />} />
               </EventContextProvider>
             </Routes>
           </BrowserRouter>

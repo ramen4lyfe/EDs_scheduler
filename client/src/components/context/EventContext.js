@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState, createContext } from 'react';
 
-export const EventContext = createEvent()
+export const EventContext = createContext()
 
 
 const EventContextProvider = (props) => {
