@@ -13,7 +13,7 @@ const EventSchema = new mongoose.Schema({
         //minlength: [5, 'date length should be more than 4 characters']
     },
     startTime: {
-        type: String, // Date schema type of Mongoose represents not just a date, but a full date and time timestamp,
+        type: Date, // Date schema type of Mongoose represents not just a date, but a full date and time timestamp,
         required: [true, 'start time is required'],
         // min: [0, 'invalid start time'],
         // max: [23, 'invalid start time']
