@@ -3,7 +3,6 @@ import axios from 'axios';
 import {Link, useNavigate} from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import Table from 'react-bootstrap/Table';
-import Button from 'react-bootstrap/Button';
 import CreateModal from './modals/CreateModal';
 import UpdateModal from './modals/UpdateModal';
 import moment from 'moment';
@@ -23,11 +22,6 @@ const EventList = () => {
             console.log(res);
             console.log(res.data);
 
-            // for(let i=0; i < res.data.length;i++){
-            //     let d = new Date(res.data[i].date);
-            //     res.data[i].date = d.toDateString();
-            //     console.log(res.data[i].date);
-            // }
             setEventList(res.data);            
         }))
         .catch((err)=>console.log(err))
