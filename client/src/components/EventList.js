@@ -13,11 +13,11 @@ import { EventContext } from './context/EventContext';
 
 const EventList = () => {
 
-    const {event} = useContext(EventContext)
+    const {}
 
-    // const [eventList, setEventList] = useState([]);
-    // let events = [];
-    // const navigate = useNavigate();
+    const [eventList, setEventList] = useState([]);
+    let events = [];
+    const navigate = useNavigate();
 
     // useEffect(() =>{
     //     axios.get("http://localhost:8000/schedule")
@@ -30,18 +30,18 @@ const EventList = () => {
     //     .catch((err)=>console.log(err))
     // }, [])
 
-    // const handleDelete = (idFromBelow) => {
-    //     axios
-    //     .delete(`http://localhost:8000/schedule/${idFromBelow}`)
-    //     .then((res)=>{
-    //         console.log(res.data);
-    //         const deletedEvent = eventList.filter((event) => {
-    //             return event._id !== idFromBelow
-    //         })
-    //         setEventList(deletedEvent)
-    //     })
-    //     .catch((err)=>console.log(err))
-    // }
+    const handleDelete = (idFromBelow) => {
+        axios
+        .delete(`http://localhost:8000/schedule/${idFromBelow}`)
+        .then((res)=>{
+            console.log(res.data);
+            const deletedEvent = eventList.filter((event) => {
+                return event._id !== idFromBelow
+            })
+            setEventList(deletedEvent)
+        })
+        .catch((err)=>console.log(err))
+    }
     
 
     return (
