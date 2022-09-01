@@ -13,7 +13,7 @@ import { EventContext } from './context/EventContext';
 
 const EventList = () => {
 
-    const {}
+    const {event} = useContext(EventContext)
 
     // const [eventList, setEventList] = useState([]);
     // let events = [];
@@ -30,18 +30,18 @@ const EventList = () => {
     //     .catch((err)=>console.log(err))
     // }, [])
 
-    const handleDelete = (idFromBelow) => {
-        axios
-        .delete(`http://localhost:8000/schedule/${idFromBelow}`)
-        .then((res)=>{
-            console.log(res.data);
-            const deletedEvent = eventList.filter((event) => {
-                return event._id !== idFromBelow
-            })
-            setEventList(deletedEvent)
-        })
-        .catch((err)=>console.log(err))
-    }
+    // const handleDelete = (idFromBelow) => {
+    //     axios
+    //     .delete(`http://localhost:8000/schedule/${idFromBelow}`)
+    //     .then((res)=>{
+    //         console.log(res.data);
+    //         const deletedEvent = eventList.filter((event) => {
+    //             return event._id !== idFromBelow
+    //         })
+    //         setEventList(deletedEvent)
+    //     })
+    //     .catch((err)=>console.log(err))
+    // }
     
 
     return (
@@ -64,7 +64,7 @@ const EventList = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {eventList.map((event, index) => (
+                            {event.map((event, index) => (
                                 <tr key={event._id}>
                                     <td>{moment(event.date).format('dddd, MMM Do')}</td>
                                     <td>{moment(event.startTime).format("hh:mm A")}</td>
@@ -73,9 +73,9 @@ const EventList = () => {
                                     <td>{event.gmEmployee}</td>
                                     <td>
                                         <UpdateModal id={event._id}/>
-                                        <IconButton type="submit" onClick={() => handleDelete(event._id)}>
+                                        {/* <IconButton type="submit" onClick={() => handleDelete(event._id)}>
                                         <DeleteForeverIcon color='error' />
-                                        </IconButton>
+                                        </IconButton> */}
                                     </td>
                                 </tr>
                             ))}
