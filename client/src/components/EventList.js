@@ -13,22 +13,22 @@ import { EventContext } from './context/EventContext';
 
 const EventList = () => {
 
-    const {}
+    // const {}
 
-    // const [eventList, setEventList] = useState([]);
-    // let events = [];
-    // const navigate = useNavigate();
+    const [eventList, setEventList] = useState([]);
+    let events = [];
+    const navigate = useNavigate();
 
-    // useEffect(() =>{
-    //     axios.get("http://localhost:8000/schedule")
-    //     .then((res=>{
-    //         console.log(res);
-    //         console.log(res.data);
+    useEffect(() =>{
+        axios.get("http://localhost:8000/schedule")
+        .then((res=>{
+            console.log(res);
+            console.log(res.data);
 
-    //         setEventList(res.data);            
-    //     }))
-    //     .catch((err)=>console.log(err))
-    // }, [])
+            setEventList(res.data);            
+        }))
+        .catch((err)=>console.log(err))
+    }, [])
 
     const handleDelete = (idFromBelow) => {
         axios
