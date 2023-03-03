@@ -9,13 +9,13 @@ const ShiftsSchema = new mongoose.Schema({
     },
     date: {
         type: Date,
-        required: [true, 'date is required'],
+        required: [true, 'Date is required'],
     },
     employee: {
-        type: String,
-        required: [true,'Select an employee'],
-        enum:['Quang', 'Peter', 'HHH'],
-    }
+        type: mongoose.Schema.Types.ObjectId, //refferencing the 'Employee' model. This creates a one to many relationship between the 'Shifts' and 'Employees'
+        ref: 'Employee',
+        required: [true, 'Please select an employee'],
+      },
 },
 {timestamps: true}
 );
