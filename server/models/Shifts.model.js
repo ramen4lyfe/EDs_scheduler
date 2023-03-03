@@ -2,7 +2,20 @@ const mongoose = require('mongoose')
 var ObjectId = require('mongodb').ObjectId;
 
 const ShiftsSchema = new mongoose.Schema({
-
+    shiftPeriod: {
+        type: String,
+        enum: ['Afternoon', 'Evening'],
+        required: [true, 'Please select the shift'],
+    },
+    date: {
+        type: Date,
+        required: [true, 'date is required'],
+    },
+    employee: {
+        type: String,
+        required: [true,'Select an employee'],
+        enum:['Quang', 'Peter', 'HHH'],
+    }
 },
 {timestamps: true}
 );
