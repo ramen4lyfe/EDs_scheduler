@@ -7,6 +7,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 require("./config/mongoose.config");
 require("./routes/event.routes")(app);
-app.listen(3000, () => {
- console.log("Listening at Port 3000");
+app.listen(3001, () => {
+ console.log("Listening at Port 3001");
 });

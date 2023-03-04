@@ -17,7 +17,7 @@ const EventList = () => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:8000/schedule')
+      .get('http://localhost:3001/schedule')
       .then((res) => {
         console.log(res);
         console.log(res.data);
@@ -29,7 +29,7 @@ const EventList = () => {
 
   const handleDelete = (idFromBelow) => {
     axios
-      .delete(`http://localhost:8000/schedule/${idFromBelow}`)
+      .delete(`http://localhost:3001/schedule/${idFromBelow}`)
       .then((res) => {
         console.log(res.data);
         const deletedEvent = eventList.filter((event) => {
